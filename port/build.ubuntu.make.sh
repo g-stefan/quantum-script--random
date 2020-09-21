@@ -17,5 +17,5 @@ cmdX(){
 	fi
 }
 
-cmdX xyo-cc --mode=$ACTION @util/quantum-script-extension-random.static.compile.info
-cmdX xyo-cc --mode=$ACTION @util/quantum-script-extension-random.dynamic.compile.info
+cmdX xyo-cc --mode=$ACTION @util/quantum-script-extension-random.static.compile
+cmdX xyo-cc --mode=$ACTION @util/quantum-script-extension-random.dynamic.compile
