@@ -28,20 +28,19 @@ namespace Quantum {
 				using namespace XYO;
 				using namespace Quantum::Script;
 
-				const char *VariableRandom::typeRandomKey = "{A2D9B22E-4185-45CE-BA5D-40989BD2947A}";
-				const void *VariableRandom::typeRandom;
+				XYO_DYNAMIC_TYPE_IMPLEMENT(VariableRandom, "{A2D9B22E-4185-45CE-BA5D-40989BD2947A}");
 				const char *VariableRandom::strTypeRandom = "Random";
 
-				String VariableRandom::getType() {
+				VariableRandom::VariableRandom() {
+					XYO_DYNAMIC_TYPE_PUSH(VariableRandom);
+				};
+
+				String VariableRandom::getVariableType() {
 					return strTypeRandom;
 				};
 
 				Variable *VariableRandom::newVariable() {
 					return (Variable *) TMemory<VariableRandom>::newMemory();
-				};
-
-				Variable &VariableRandom::operatorReference(Symbol symbolId) {
-					return operatorReferenceX(symbolId, (Extension::Random::getContext())->prototypeRandom->prototype);
 				};
 
 				Variable *VariableRandom::instancePrototype() {

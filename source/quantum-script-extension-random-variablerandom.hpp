@@ -50,39 +50,27 @@ namespace Quantum {
 				class VariableRandom :
 					public Variable {
 						XYO_DISALLOW_COPY_ASSIGN_MOVE(VariableRandom);
+						XYO_DYNAMIC_TYPE_DEFINE(QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT, VariableRandom);
 					protected:
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT static const char *strTypeRandom;
-						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT static const char *typeRandomKey;
-						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT static const void *typeRandom;
 					public:
 
 						RandomMT value;
 
-						inline VariableRandom() {
-							variableType = registerType(typeRandom, typeRandomKey);
-						};
+						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT VariableRandom();
 
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT void activeConstructor();
 
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT static Variable *newVariable();
 
-						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT String getType();
+						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT String getVariableType();
 
-						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT Variable &operatorReference(Symbol symbolId);
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT Variable *instancePrototype();
 
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT Variable *clone(SymbolList &inSymbolList);
 
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT bool toBoolean();
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT String toString();
-
-						//
-						inline static bool isVariableRandom(const Variable *value) {
-							if(typeRandom == nullptr) {
-								typeRandom = registerType(typeRandom, typeRandomKey);
-							};
-							return (value->variableType == typeRandom);
-						};
 
 				};
 

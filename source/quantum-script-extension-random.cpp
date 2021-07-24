@@ -64,7 +64,7 @@ namespace Quantum {
 					randomContext->prototypeRandom.newMemory();
 
 					defaultPrototypeFunction = (VariableFunction *)VariableFunction::newVariable(nullptr, nullptr, nullptr, functionRandom, nullptr, nullptr);
-					((Context::getGlobalObject())->operatorReferenceOwnProperty(randomContext->symbolFunctionRandom))=defaultPrototypeFunction;
+					(Context::getGlobalObject())->setPropertyBySymbol(randomContext->symbolFunctionRandom, defaultPrototypeFunction);
 					randomContext->prototypeRandom = defaultPrototypeFunction->prototype;
 				};
 
@@ -81,7 +81,7 @@ namespace Quantum {
 					printf("- random-next-random\n");
 #endif
 
-					if(!VariableRandom::isVariableRandom(this_)) {
+					if(!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -94,7 +94,7 @@ namespace Quantum {
 					printf("- random-to-integer\n");
 #endif
 
-					if(!VariableRandom::isVariableRandom(this_)) {
+					if(!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -106,7 +106,7 @@ namespace Quantum {
 					printf("- random-to-number\n");
 #endif
 
-					if(!VariableRandom::isVariableRandom(this_)) {
+					if(!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -118,7 +118,7 @@ namespace Quantum {
 					printf("- random-to-string\n");
 #endif
 
-					if(!VariableRandom::isVariableRandom(this_)) {
+					if(!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -131,7 +131,7 @@ namespace Quantum {
 					printf("- random-seed\n");
 #endif
 
-					if(!VariableRandom::isVariableRandom(this_)) {
+					if(!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
