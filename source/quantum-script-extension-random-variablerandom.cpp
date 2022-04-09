@@ -19,7 +19,6 @@
 #include "quantum-script-variablenumber.hpp"
 #include "quantum-script-variablestring.hpp"
 
-
 namespace Quantum {
 	namespace Script {
 		namespace Extension {
@@ -40,7 +39,7 @@ namespace Quantum {
 				};
 
 				Variable *VariableRandom::newVariable() {
-					return (Variable *) TMemory<VariableRandom>::newMemory();
+					return (Variable *)TMemory<VariableRandom>::newMemory();
 				};
 
 				Variable *VariableRandom::instancePrototype() {
@@ -69,5 +68,3 @@ namespace Quantum {
 		};
 	};
 };
-
-

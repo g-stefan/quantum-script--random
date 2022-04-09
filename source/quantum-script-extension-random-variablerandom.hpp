@@ -11,11 +11,11 @@
 #define QUANTUM_SCRIPT_EXTENSION_RANDOM_VARIABLERANDOM_HPP
 
 #ifndef QUANTUM_SCRIPT_VARIABLE_HPP
-#include "quantum-script-variable.hpp"
+#	include "quantum-script-variable.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_RANDOM__EXPORT_HPP
-#include "quantum-script-extension-random--export.hpp"
+#	include "quantum-script-extension-random--export.hpp"
 #endif
 
 namespace Quantum {
@@ -30,12 +30,10 @@ namespace Quantum {
 	};
 };
 
-
 namespace XYO {
 	namespace ManagedMemory {
-		template<>
-		class TMemory<Quantum::Script::Extension::Random::VariableRandom>:
-			public TMemoryPoolActive<Quantum::Script::Extension::Random::VariableRandom> {};
+		template <>
+		class TMemory<Quantum::Script::Extension::Random::VariableRandom> : public TMemoryPoolActive<Quantum::Script::Extension::Random::VariableRandom> {};
 	};
 };
 
@@ -47,14 +45,14 @@ namespace Quantum {
 				using namespace XYO;
 				using namespace Quantum::Script;
 
-				class VariableRandom :
-					public Variable {
+				class VariableRandom : public Variable {
 						XYO_DISALLOW_COPY_ASSIGN_MOVE(VariableRandom);
 						XYO_DYNAMIC_TYPE_DEFINE(QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT, VariableRandom);
+
 					protected:
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT static const char *strTypeRandom;
-					public:
 
+					public:
 						RandomMT value;
 
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT VariableRandom();
@@ -71,13 +69,11 @@ namespace Quantum {
 
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT bool toBoolean();
 						QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT String toString();
-
 				};
 
 			};
 		};
 	};
 };
-
 
 #endif

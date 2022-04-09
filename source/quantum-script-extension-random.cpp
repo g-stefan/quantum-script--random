@@ -16,12 +16,11 @@
 #include "quantum-script-extension-random.hpp"
 #include "quantum-script-extension-random-variablerandom.hpp"
 #ifndef QUANTUM_SCRIPT_EXTENSION_RANDOM_NO_VERSION
-#include "quantum-script-extension-random-version.hpp"
+#	include "quantum-script-extension-random-version.hpp"
 #endif
 
 #include "quantum-script-variableboolean.hpp"
 #include "quantum-script-variablenumber.hpp"
-
 
 #include "quantum-script-variablestring.hpp"
 
@@ -81,11 +80,11 @@ namespace Quantum {
 					printf("- random-next-random\n");
 #endif
 
-					if(!TIsType<VariableRandom>(this_)) {
+					if (!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
-					((VariableRandom *)( this_ ))->value.nextRandom();
+					((VariableRandom *)(this_))->value.nextRandom();
 					return VariableNumber::newVariable(toNumber_(this_));
 				};
 
@@ -94,7 +93,7 @@ namespace Quantum {
 					printf("- random-to-integer\n");
 #endif
 
-					if(!TIsType<VariableRandom>(this_)) {
+					if (!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -106,7 +105,7 @@ namespace Quantum {
 					printf("- random-to-number\n");
 #endif
 
-					if(!TIsType<VariableRandom>(this_)) {
+					if (!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
@@ -118,30 +117,28 @@ namespace Quantum {
 					printf("- random-to-string\n");
 #endif
 
-					if(!TIsType<VariableRandom>(this_)) {
+					if (!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
 					return VariableString::newVariable(VariableNumber::toStringX(toNumber_(this_)));
 				};
 
-
 				static TPointer<Variable> seed(VariableFunction *function, Variable *this_, VariableArray *arguments) {
 #ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
 					printf("- random-seed\n");
 #endif
 
-					if(!TIsType<VariableRandom>(this_)) {
+					if (!TIsType<VariableRandom>(this_)) {
 						throw(Error("invalid parameter"));
 					};
 
 					Number value = (arguments->index(0))->toNumber();
-					if(isnan(value) || isinf(value) || signbit(value)) {
+					if (isnan(value) || isinf(value) || signbit(value)) {
 						return VariableBoolean::newVariable(false);
 					};
 
-
-					((VariableRandom *)( this_ ))->value.seed((Integer)value);
+					((VariableRandom *)(this_))->value.seed((Integer)value);
 
 					return VariableBoolean::newVariable(true);
 				};
@@ -164,12 +161,11 @@ namespace Quantum {
 
 					newContext(executive, extensionId);
 
-					executive->setFunction2("Random.prototype.next()",  nextRandom);
-					executive->setFunction2("Random.prototype.toInteger()",  toInteger);
-					executive->setFunction2("Random.prototype.toNumber()",  toNumber);
-					executive->setFunction2("Random.prototype.toString()",  toString);
-					executive->setFunction2("Random.prototype.seed(x)",  seed);
-
+					executive->setFunction2("Random.prototype.next()", nextRandom);
+					executive->setFunction2("Random.prototype.toInteger()", toInteger);
+					executive->setFunction2("Random.prototype.toNumber()", toNumber);
+					executive->setFunction2("Random.prototype.toString()", toString);
+					executive->setFunction2("Random.prototype.seed(x)", seed);
 				};
 
 			};
@@ -182,4 +178,3 @@ extern "C" QUANTUM_SCRIPT_EXTENSION_RANDOM_EXPORT void quantumScriptExtension(Qu
 	Quantum::Script::Extension::Random::initExecutive(executive, extensionId);
 };
 #endif
-

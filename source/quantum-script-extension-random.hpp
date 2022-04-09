@@ -11,23 +11,23 @@
 #define QUANTUM_SCRIPT_EXTENSION_RANDOM_HPP
 
 #ifndef QUANTUM_SCRIPT_HPP
-#include "quantum-script.hpp"
+#	include "quantum-script.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_RANDOM__EXPORT_HPP
-#include "quantum-script-extension-random--export.hpp"
+#	include "quantum-script-extension-random--export.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_RANDOM_COPYRIGHT_HPP
-#include "quantum-script-extension-random-copyright.hpp"
+#	include "quantum-script-extension-random-copyright.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_RANDOM_LICENSE_HPP
-#include "quantum-script-extension-random-license.hpp"
+#	include "quantum-script-extension-random-license.hpp"
 #endif
 
 #ifndef QUANTUM_SCRIPT_EXTENSION_RANDOM_VERSION_HPP
-#include "quantum-script-extension-random-version.hpp"
+#	include "quantum-script-extension-random-version.hpp"
 #endif
 
 namespace Quantum {
@@ -37,11 +37,10 @@ namespace Quantum {
 
 				using namespace Quantum::Script;
 
-				class RandomContext:
-					public Object {
+				class RandomContext : public Object {
 						XYO_DISALLOW_COPY_ASSIGN_MOVE(RandomContext);
-					public:
 
+					public:
 						Symbol symbolFunctionRandom;
 						TPointerX<Prototype> prototypeRandom;
 
@@ -59,4 +58,3 @@ namespace Quantum {
 };
 
 #endif
-
