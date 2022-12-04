@@ -1,6 +1,0 @@
---lib qse-random
---project-base=quantum-script-extension-random
---build-include
---use-project=quantum-script.static
---install-dev
---install-inc=quantum-script-extension
