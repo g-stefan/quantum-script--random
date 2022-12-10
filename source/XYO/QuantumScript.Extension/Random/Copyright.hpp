@@ -16,7 +16,6 @@ namespace XYO::QuantumScript::Extension::Random::Copyright {
 	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT const char *publisher();
 	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT const char *company();
 	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT const char *contact();
-	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT const char *fullCopyright();
 };
 
 #endif
