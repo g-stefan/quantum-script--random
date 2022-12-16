@@ -56,7 +56,7 @@ namespace XYO::QuantumScript::Extension::Random {
 	};
 
 	static TPointer<Variable> nextRandom(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- random-next-random\n");
 #endif
 
@@ -69,7 +69,7 @@ namespace XYO::QuantumScript::Extension::Random {
 	};
 
 	static TPointer<Variable> toInteger(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- random-to-integer\n");
 #endif
 
@@ -81,7 +81,7 @@ namespace XYO::QuantumScript::Extension::Random {
 	};
 
 	static TPointer<Variable> toNumber(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- random-to-number\n");
 #endif
 
@@ -93,7 +93,7 @@ namespace XYO::QuantumScript::Extension::Random {
 	};
 
 	static TPointer<Variable> toString(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- random-to-string\n");
 #endif
 
@@ -105,7 +105,7 @@ namespace XYO::QuantumScript::Extension::Random {
 	};
 
 	static TPointer<Variable> seed(VariableFunction *function, Variable *this_, VariableArray *arguments) {
-#ifdef QUANTUM_SCRIPT_DEBUG_RUNTIME
+#ifdef XYO_QUANTUMSCRIPT_DEBUG_RUNTIME
 		printf("- random-seed\n");
 #endif
 
