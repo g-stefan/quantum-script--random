@@ -12,6 +12,8 @@
 			"quantum-script",
 			"quantum-script--console",
 			"xyo-cryptography"
-		]
+		],
+		"hasRelease" : true,
+		"githubRelease" : true
 	}
 }
