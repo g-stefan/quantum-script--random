@@ -130,7 +130,7 @@ namespace XYO::QuantumScript::Extension::Random {
 	void initExecutive(Executive *executive, void *extensionId) {
 
 		String info = "Random\r\n";
-		info << License::shortLicense();
+		info << License::shortLicense().c_str();
 
 		executive->setExtensionName(extensionId, "Random");
 		executive->setExtensionInfo(extensionId, info);

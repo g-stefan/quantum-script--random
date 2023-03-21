@@ -13,8 +13,8 @@
 
 namespace XYO::QuantumScript::Extension::Random::License {
 
-	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT const char *license();
-	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT const char *shortLicense();
+	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT std::string license();
+	XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT std::string shortLicense();
 
 };
 
