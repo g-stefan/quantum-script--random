@@ -8,4 +8,4 @@
 #include <XYO/QuantumScript.Extension/Random/Copyright.rh>
 #include <XYO/QuantumScript.Extension/Random/Version.rh>
 
-XYO_APPLICATION_VERSION_INFO(XYO_QUANTUMSCRIPT_EXTENSION_RANDOM,"quantum-script--random.dll","Quantum Script Extension Random")
+XYO_PLATFORM_VERSION_INFO(XYO_QUANTUMSCRIPT_EXTENSION_RANDOM,"quantum-script--random.dll","Quantum Script Extension Random")

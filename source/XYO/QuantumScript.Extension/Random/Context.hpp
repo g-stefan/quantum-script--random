@@ -14,7 +14,7 @@
 namespace XYO::QuantumScript::Extension::Random {
 
 	class RandomContext : public Object {
-			XYO_DISALLOW_COPY_ASSIGN_MOVE(RandomContext);
+			XYO_PLATFORM_DISALLOW_COPY_ASSIGN_MOVE(RandomContext);
 
 		public:
 			Symbol symbolFunctionRandom;

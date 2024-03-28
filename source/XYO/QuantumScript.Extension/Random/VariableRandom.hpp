@@ -23,7 +23,7 @@ namespace XYO::ManagedMemory {
 namespace XYO::QuantumScript::Extension::Random {
 
 	class VariableRandom : public Variable {
-			XYO_DISALLOW_COPY_ASSIGN_MOVE(VariableRandom);
+			XYO_PLATFORM_DISALLOW_COPY_ASSIGN_MOVE(VariableRandom);
 			XYO_DYNAMIC_TYPE_DEFINE(XYO_QUANTUMSCRIPT_EXTENSION_RANDOM_EXPORT, VariableRandom);
 
 		protected:
